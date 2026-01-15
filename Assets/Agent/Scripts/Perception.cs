@@ -1,20 +1,13 @@
 using UnityEngine;
 
-public class Perception : MonoBehaviour
+public abstract class Perception : MonoBehaviour
 {
-    public string tagName;
-    public float maxDistance;
-    public float maxAngle;
+    [SerializeField] string info;
+
+    [SerializeField] protected string tagName;
+    [SerializeField] protected float maxDistance;
+    [SerializeField, Range(0, 180)] protected float maxAngle;
 
 
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
-    }
+    public abstract GameObject[] GetGameObjects();
 }

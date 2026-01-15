@@ -1,16 +1,23 @@
 using UnityEngine;
 
-public class Movement : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+public abstract class Movement : MonoBehaviour
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+{
+
+    public float maxSpeed = 1.0f;
+
+    public float maxForce = 1.0f;
+
+
+
+    public virtual Vector3 Velocity { get; set; }
+
+    public virtual Vector3 Acceleration { get; set; }
+
+    public virtual Vector3 direction { get { return Velocity.normalized;  } }
+
+
+
+    public abstract void ApplyForce(Vector3 force);
+
 }
